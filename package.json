@@ -10,6 +10,7 @@
   }
 , "dependencies": {
     "coffee-script": "*" 
+  , "express": "*"
   }
 , "devDependencies": {
     "mocha": "*"
