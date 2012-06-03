@@ -1,20 +1,21 @@
 {
-  "name": "greenfootjs"
-, "author": "danlangford"
-, "version": "0.0.1"
-, "scripts": {
-    "web": "node web.js"
-  , "worker": "node worker.js"
-  }
-, "engines": {
-    "node": "0.6.x"
-  }
-, "dependencies": {
-    "coffee-script": "*" 
-  , "express": "*"
-  }
-, "devDependencies": {
-    "mocha": "*"
-  , "should": "*"
-  }
+    "name": "greenfootjs",
+    "author": "danlangford",
+    "version": "0.0.1",
+    "scripts": {
+        "web": "node web.js",
+        "worker": "node worker.js",
+        "compile": "node compile.js"
+    },
+    "engines": {
+        "node": "0.6.x"
+    },
+    "dependencies": {
+        "coffee-script": "*",
+        "express": "*"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+    }
 }

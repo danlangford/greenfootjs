@@ -1,12 +1,19 @@
-var express = require('express');
+var express = require('express'),
+    app = express.createServer(express.logger()),
+    port = process.env.PORT || 5000,
+    log = console;
 
-var app = express.createServer(express.logger());
+(function(){
+    "use strict";
+    
+    app.get('/', function(request, response) {
+      response.send('Hello World!<br/>(from greenfootjs)<br/>maybe someday a js/web clone/port of [Greenfoot](http://greenfoot.org)');
+    });
+    
+    app.listen(port, function() {
+      log.log("Listening on " + port);
+    });
+    
+})();
 
-app.get('/', function(request, response) {
-  response.send('Hello World! (from web)');
-});
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
