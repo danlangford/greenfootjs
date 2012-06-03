@@ -2,6 +2,10 @@
   "name": "greenfootjs"
 , "author": "danlangford"
 , "version": "0.0.1"
+, "scripts": {
+    "web": "node web.js"
+  , "worker": "node worker.js"
+  }
 , "engines": {
     "node": "0.6.x"
   }
