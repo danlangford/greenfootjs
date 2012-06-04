@@ -10,7 +10,10 @@ AIFF, AU, WAV, MP3 and MIDI.
 ###
 
 class GreenfootSound
-    constructor:()->
+
+    constructor:(@filename)->
+        # not done yet
+        
     getVolume:()->
     isPlaying:()->
     pause:()->

@@ -14,7 +14,9 @@ var GreenfootSound;
 
 GreenfootSound = (function() {
 
-  function GreenfootSound() {}
+  function GreenfootSound(filename) {
+    this.filename = filename;
+  }
 
   GreenfootSound.prototype.getVolume = function() {};
 

@@ -25,9 +25,11 @@ Actor = (function() {
 
   Actor.prototype.act = function() {};
 
-  Actor.prototype.getImage = function() {};
+  Actor.prototype.getImage = function() {
+    return this.image;
+  };
 
-  Actor.prototype.getIntersectingObectw = function() {};
+  Actor.prototype.getIntersectingObects = function() {};
 
   Actor.prototype.getNeighbour = function() {};
 
@@ -37,25 +39,58 @@ Actor = (function() {
 
   Actor.prototype.getOneInterceptingObject = function() {};
 
-  Actor.prototype.getRotation = function() {};
+  Actor.prototype.getRotation = function() {
+    return this.rotation;
+  };
 
-  Actor.prototype.getWorld = function() {};
+  Actor.prototype.getWorld = function() {
+    return this.world;
+  };
 
-  Actor.prototype.getX = function() {};
+  Actor.prototype.getX = function() {
+    failIfNotInWorld();
+    return this.x;
+  };
 
-  Actor.prototype.getY = function() {};
+  Actor.prototype.getY = function() {
+    failIfNotInWorld();
+    return this.y;
+  };
 
   Actor.prototype.intersects = function() {};
 
-  Actor.prototype.move = function() {};
+  Actor.prototype.move = function(distance) {};
 
   Actor.prototype.setImage = function() {};
 
-  Actor.prototype.setLocation = function() {};
+  Actor.prototype.setLocation = function(x, y) {};
 
-  Actor.prototype.setRotation = function() {};
+  Actor.prototype.setRotation = function(rotation) {
+    if (rotation >= 360) {
+      if (rotation < 720) {
+        rotation -= 360;
+      } else {
+        rotation %= 360;
+      }
+    } else if (rotation < 0) {
+      if (rotation >= -360) {
+        rotation += 360;
+      } else {
+        rotation = 360 + (rotation % 360);
+      }
+    }
+    if (this.rotation !== rotation) {
+      this.rotation = rotation;
+      this.boundingRect = null;
+      return sizeChanged();
+    }
+  };
 
-  Actor.prototype.turn = function() {};
+  Actor.prototype.turn = function(amount) {
+    return setRotation(this.rotation + amount);
+  };
+
+  Actor.prototype.turnTowards = function(x, y) {};
 
   return Actor;
 

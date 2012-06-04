@@ -18,16 +18,33 @@ The world background can be decorated with drawings or images.
 
 # abstract ?
 class World
-    constructor:()-> # 2 versions
+
+    constructor:(worldWidth, worldheight, cellSize, bounded = true)->
+        initialize worldWidth worldHeight cellSize
+        @isBounded = bounded
+        @backgroundIsClassImage = true
+        # not done here
+        
     act:()->
+        # by default do nothing
+        
     addObject:()->
     getBackground:()->
+        
     getCellSize:()->
+        @cellSize
+        
     getColorAt:()->
+        
     getHeight:()->
+        @height
+        
     getObjects:()->
     getObjectsAt:()->
+        
     getWidth:()->
+        @width
+        
     numberOfObjects:()->
     removeObject:()->
     removeObjects:()->
@@ -35,8 +52,12 @@ class World
     setActOrder:()->
     setBackground:()-> # 2 version
     setPaintOrder:()->
+        
     started:()->
+        # by default do nothing
+        
     stopped:()->
+        # by default do nothing
         
         
 module.exports = World

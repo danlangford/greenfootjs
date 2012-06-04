@@ -41,7 +41,9 @@ GreenfootImage = (function() {
 
   GreenfootImage.prototype.getAwtImage = function() {};
 
-  GreenfootImage.prototype.getColor = function() {};
+  GreenfootImage.prototype.getColor = function() {
+    return this.currentColor;
+  };
 
   GreenfootImage.prototype.getColorAt = function() {};
 
@@ -49,7 +51,9 @@ GreenfootImage = (function() {
 
   GreenfootImage.prototype.getHeight = function() {};
 
-  GreenfootImage.prototype.getTransparency = function() {};
+  GreenfootImage.prototype.getTransparency = function() {
+    return this.transparency;
+  };
 
   GreenfootImage.prototype.getWidth = function() {};
 
@@ -61,11 +65,15 @@ GreenfootImage = (function() {
 
   GreenfootImage.prototype.scale = function() {};
 
-  GreenfootImage.prototype.setColor = function() {};
+  GreenfootImage.prototype.setColor = function(currentColor) {
+    this.currentColor = currentColor;
+  };
 
   GreenfootImage.prototype.setColorAt = function() {};
 
-  GreenfootImage.prototype.setFont = function() {};
+  GreenfootImage.prototype.setFont = function(currentFont) {
+    this.currentFont = currentFont;
+  };
 
   GreenfootImage.prototype.setTransparency = function() {};
 

@@ -22,19 +22,29 @@ class GreenfootImage
     fillRect:()->
     fillShape:()->
     getAwtImage:()->
+        
     getColor:()->
+        @currentColor
+        
     getColorAt:()->
     getFont:()->
     getHeight:()->
+        
     getTransparency:()->
+        @transparency
+        
     getWidth:()->
     mirrorHorizontally:()->
     mirrorVertically:()->
     rotate:()->
     scale:()->
-    setColor:()->
+        
+    setColor:(@currentColor)->
+        
     setColorAt:()->
-    setFont:()->
+        
+    setFont:(@currentFont)->
+        
     setTransparency:()->
     toString:()->
         

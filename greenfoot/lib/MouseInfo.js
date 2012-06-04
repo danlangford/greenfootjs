@@ -12,17 +12,29 @@ MouseInfo = (function() {
 
   function MouseInfo() {}
 
-  MouseInfo.prototype.getActor = function() {};
+  MouseInfo.prototype.getActor = function() {
+    return this.actor;
+  };
 
-  MouseInfo.prototype.getButton = function() {};
+  MouseInfo.prototype.getButton = function() {
+    return this.button;
+  };
 
-  MouseInfo.prototype.getClickCount = function() {};
+  MouseInfo.prototype.getClickCount = function() {
+    return this.clickCount;
+  };
 
-  MouseInfo.prototype.getX = function() {};
+  MouseInfo.prototype.getX = function() {
+    return this.x;
+  };
 
-  MouseInfo.prototype.getY = function() {};
+  MouseInfo.prototype.getY = function() {
+    return this.y;
+  };
 
-  MouseInfo.prototype.toString = function() {};
+  MouseInfo.prototype.toString = function() {
+    return "MouseInfo. Actor: " + actor + "  Location: (" + x + "," + y + ")  Button: " + button + " Click Count: " + clickCount;
+  };
 
   return MouseInfo;
 

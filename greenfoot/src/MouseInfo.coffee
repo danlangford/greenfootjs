@@ -6,14 +6,26 @@ You can get a MouseInfo object via Greenfoot.getMouseInfo().
 ###
 
 class MouseInfo
+
     # constructor:()-> no public constructor ?
+    
     getActor:()->
+        @actor
+        
     getButton:()->
+        @button
+        
     getClickCount:()->
+        @clickCount
+        
     getX:()->
+        @x
+        
     getY:()->
+        @y
+        
     toString:()->
+        "MouseInfo. Actor: #{actor}  Location: (#{x},#{y})  Button: #{button} Click Count: #{clickCount}"
         
-        
-        
+
 module.exports = MouseInfo

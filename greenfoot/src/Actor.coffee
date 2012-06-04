@@ -20,22 +20,56 @@ provide their own implementations.
 class Actor
     constructor:()->
     act:()->
+        
     getImage:()->
-    getIntersectingObectw:()->
+        @image
+        
+    getIntersectingObects:()->
     getNeighbour:()->
     getObjectsAtOffest:()->
     getObjectsInRange:()->
     getOneInterceptingObject:()->
+        
     getRotation:()->
+        @rotation
+        
     getWorld:()->
+        @world
+        
     getX:()->
+        failIfNotInWorld()
+        @x
+        
     getY:()->
+        failIfNotInWorld()
+        @y
+        
     intersects:()->
-    move:()->
+        
+    move:(distance)->
+        
+        
     setImage:()-> # 2 versions
-    setLocation:()->
-    setRotation:()->
-    turn:()->
+    setLocation:(x,y)->
+        
+    setRotation:(rotation)->
+        if rotation >= 360
+            if rotation < 720 then rotation -= 360
+            else rotation %= 360
+        else if rotation < 0
+            if rotation >= -360 then rotation += 360
+            else rotation = 360 + (rotation % 360)
+            
+        unless @rotation is rotation
+            @rotation = rotation
+            @boundingRect = null
+            sizeChanged()
+   
+        
+    turn:(amount)->
+        setRotation @rotation+amount
+        
+    turnTowards:(x,y)->
         
         
 module.exports = Actor        

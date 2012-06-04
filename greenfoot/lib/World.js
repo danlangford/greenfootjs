@@ -21,7 +21,14 @@ var World;
 
 World = (function() {
 
-  function World() {}
+  function World(worldWidth, worldheight, cellSize, bounded) {
+    if (bounded == null) {
+      bounded = true;
+    }
+    initialize(worldWidth(worldHeight(cellSize)));
+    this.isBounded = bounded;
+    this.backgroundIsClassImage = true;
+  }
 
   World.prototype.act = function() {};
 
@@ -29,17 +36,23 @@ World = (function() {
 
   World.prototype.getBackground = function() {};
 
-  World.prototype.getCellSize = function() {};
+  World.prototype.getCellSize = function() {
+    return this.cellSize;
+  };
 
   World.prototype.getColorAt = function() {};
 
-  World.prototype.getHeight = function() {};
+  World.prototype.getHeight = function() {
+    return this.height;
+  };
 
   World.prototype.getObjects = function() {};
 
   World.prototype.getObjectsAt = function() {};
 
-  World.prototype.getWidth = function() {};
+  World.prototype.getWidth = function() {
+    return this.width;
+  };
 
   World.prototype.numberOfObjects = function() {};
 
